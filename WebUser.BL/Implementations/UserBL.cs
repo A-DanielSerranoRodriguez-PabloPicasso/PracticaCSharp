@@ -13,24 +13,25 @@ namespace WebUser.BL.Implementations
 {
     public class UserBL : IUserBL
     {
-        public IUserDAL userDAL { get; set; }
-        public IMapper mapper { get; set; }
+        public IUserDAL UserDAL { get; set; }
+        public IMapper Mapper { get; set; }
         public UserBL(IUserDAL userDAL, IMapper mapper)
         {
-            this.userDAL = userDAL;
-            this.mapper = mapper;
+            this.UserDAL = userDAL;
+            this.Mapper = mapper;
         }
 
         public bool Login(LoginDTO user)
         {
-            return (userDAL.Login(mapper.Map<User>(user)));
+            return (UserDAL.Login(Mapper.Map<User>(user)));
         }
 
         public bool Register(UserDTO user)
         {
-            return (userDAL.Register(mapper.Map<User>(user)));
+            return (UserDAL.Register(Mapper.Map<User>(user)));
         }
-        public List<UserDTO> GetUsers() => mapper.Map<List<UserDTO>>(userDAL.GetUsers());
+
+        public List<UserDTO> GetUsers() => Mapper.Map<List<UserDTO>>(UserDAL.GetUsers());
 
     }
 }

@@ -21,12 +21,11 @@ namespace WebUser.DAL.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    brithDate = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    brithDate = table.Column<string>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Alumnos", x => x.UserName);
+                    table.PrimaryKey("PK_Users", x => x.UserName);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }

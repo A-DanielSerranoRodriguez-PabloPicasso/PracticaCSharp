@@ -40,6 +40,7 @@ namespace WebUser.DAL.Implementations
                 return false;
 
             context.Users.Add(user);
+            context.SaveChanges();
             return true;
         }
         public List<User> GetUsers() => context.Users.ToList();

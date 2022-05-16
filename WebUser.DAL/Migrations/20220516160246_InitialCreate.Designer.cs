@@ -10,7 +10,7 @@ using WebUser.DAL;
 namespace WebUser.DAL.Migrations
 {
     [DbContext(typeof(IESContext))]
-    [Migration("20220516121324_InitialCreate")]
+    [Migration("20220516160246_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

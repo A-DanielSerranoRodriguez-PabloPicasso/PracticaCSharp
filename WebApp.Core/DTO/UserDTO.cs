@@ -13,6 +13,8 @@ namespace WebUser.Core.DTO
         public string Email { get; set; }
         public string BirthDate { get; set; }
 
+        public UserDTO() { }
+
         public UserDTO(string userName, string password, string email, string birthDate)
         {
             UserName = userName;

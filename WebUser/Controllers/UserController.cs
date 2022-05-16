@@ -8,16 +8,17 @@ namespace WebUser.API.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        IUserBL userBL;
+        IUserBL UserBL;
+
         public UserController(IUserBL userBL)
         {
-            this.userBL = userBL;
+            this.UserBL = userBL;
         }
 
         [HttpPost("login")]
         public ActionResult Login(LoginDTO user)
         {
-            if (userBL.Login(user))
+            if (UserBL.Login(user))
                 return Ok();
             else
                 return BadRequest();
@@ -26,7 +27,7 @@ namespace WebUser.API.Controllers
         [HttpPost("register")]
         public ActionResult Register(UserDTO user)
         {
-            if (userBL.Register(user))
+            if (UserBL.Register(user))
                 return Ok();
             else
                 return BadRequest();
@@ -35,7 +36,7 @@ namespace WebUser.API.Controllers
         [HttpGet("get_users")]
         public List<UserDTO> GetUsers()
         {
-            return userBL.GetUsers();
+            return UserBL.GetUsers();
         }
     }
 }
