@@ -12,7 +12,7 @@ namespace WebUser.DAL.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Alumnos",
+                name: "Users",
                 columns: table => new
                 {
                     UserName = table.Column<string>(type: "varchar(255)", nullable: false)
@@ -34,7 +34,7 @@ namespace WebUser.DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Alumnos");
+                name: "Users");
         }
     }
 }

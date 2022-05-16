@@ -10,10 +10,21 @@ namespace WebUser.DAL.Implementations
 {
     public class UserDAL : IUserDAL
     {
+        public IESContext context { get; set; }
 
+        public UserDAL(IESContext context)
+        {
+            this.context = context;
+        }
+
+        public User? GetUser(User user)
+        {
+            return context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+        }
+       
         public bool Login(User user)
         {
-            var foundUser = BBDD.Almacen.users.FirstOrDefault(u => u.UserName == user.UserName);
+            var foundUser = GetUser(user);
 
             if (foundUser == null)
                 return false;
@@ -23,14 +34,14 @@ namespace WebUser.DAL.Implementations
 
         public bool Register(User user)
         {
-            var foundUser = BBDD.Almacen.users.FirstOrDefault(u => u.UserName == user.UserName);
+            var foundUser = GetUser(user);
 
             if (foundUser != null)
                 return false;
 
-            BBDD.Almacen.users.Add(user);
+            context.Users.Add(user);
             return true;
         }
-        public List<User> GetUsers() => BBDD.Almacen.users;
+        public List<User> GetUsers() => context.Users.ToList();
     }
 }

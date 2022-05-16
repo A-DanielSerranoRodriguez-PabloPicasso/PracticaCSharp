@@ -17,7 +17,7 @@ namespace WebUser.DAL
         { 
             this.Configuration = configuration; 
         }
-        public DbSet<User> Alumnos { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

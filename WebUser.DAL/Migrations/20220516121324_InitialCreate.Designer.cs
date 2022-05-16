@@ -37,7 +37,7 @@ namespace WebUser.DAL.Migrations
 
                     b.HasKey("UserName");
 
-                    b.ToTable("Alumnos");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
