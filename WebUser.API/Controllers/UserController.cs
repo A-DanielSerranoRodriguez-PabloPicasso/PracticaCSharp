@@ -16,21 +16,21 @@ namespace WebUser.API.Controllers
         }
 
         [HttpPost("login")]
-        public ActionResult Login(LoginDTO user)
+        public ActionResult<UserDTO> Login(LoginDTO user)
         {
             if (UserBL.Login(user))
-                return Ok();
+                return Ok(user);
             else
                 return BadRequest();
         }
 
         [HttpPost("register")]
-        public ActionResult Register(UserDTO user)
+        public ActionResult<bool> Register(UserDTO user)
         {
             if (UserBL.Register(user))
-                return Ok();
+                return Ok(true);
             else
-                return BadRequest();
+                return BadRequest(false);
         }
 
         [HttpGet("get_users")]

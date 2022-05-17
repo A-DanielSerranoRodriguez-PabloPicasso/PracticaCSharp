@@ -28,8 +28,7 @@ string[] ExposedHeaders = { "Authoritation" };
 builder.Services.AddCors(o => {
     o.AddPolicy("AllowSetOrigins", options =>
     {
-        options.WithOrigins("https://127.0.0.1:7179");
-        options.WithOrigins("https://127.0.0.1:44359");
+        options.WithOrigins("http://127.0.0.1:5500");
         options.AllowAnyHeader();
         options.AllowAnyMethod();
         options.AllowCredentials();
@@ -52,5 +51,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("AllowSetOrigins");
 
 app.Run();

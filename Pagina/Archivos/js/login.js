@@ -7,18 +7,18 @@ $(document).ready(function(){
 
         if( username != "" && password != "" ){
             $.ajax({
-                url:'https://127.0.0.1:7179/User/login',
-                // url:'https://127.0.0.1:44359/User/register',
+                url:'https://localhost:7179/User/login',
                 type:'post',
                 data:JSON.stringify({UserName:username,Password:password}),
                 contentType:"application/json; charset=utf-8",
                 success:function(response){
                     if(response){
-                        window.location = "welcome.html";
+                        window.location = "views/welcome.html";
                     }else{
                         $("#error").fadeIn();
                     }
-                }
+                },
+                error:$("#error").fadeIn()
             });
         }
     });
