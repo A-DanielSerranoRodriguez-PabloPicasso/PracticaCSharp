@@ -23,6 +23,21 @@ builder.Services.AddDbContext<IESContext>();
 
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile(new AutoMapperProfile()));
 
+// Enable CORS in API  
+string[] ExposedHeaders = { "Authoritation" };
+builder.Services.AddCors(o => {
+    o.AddPolicy("AllowSetOrigins", options =>
+    {
+        options.WithOrigins("https://127.0.0.1:7179");
+        options.WithOrigins("https://127.0.0.1:44359");
+        options.AllowAnyHeader();
+        options.AllowAnyMethod();
+        options.AllowCredentials();
+        options.WithExposedHeaders(ExposedHeaders);
+    });
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

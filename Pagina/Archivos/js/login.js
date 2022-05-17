@@ -7,9 +7,10 @@ $(document).ready(function(){
 
         if( username != "" && password != "" ){
             $.ajax({
-                url:'https://localhost:44308/api/Login',
+                url:'https://127.0.0.1:7179/User/login',
+                // url:'https://127.0.0.1:44359/User/register',
                 type:'post',
-                data:JSON.stringify({username:username,password:password}),
+                data:JSON.stringify({UserName:username,Password:password}),
                 contentType:"application/json; charset=utf-8",
                 success:function(response){
                     if(response){
