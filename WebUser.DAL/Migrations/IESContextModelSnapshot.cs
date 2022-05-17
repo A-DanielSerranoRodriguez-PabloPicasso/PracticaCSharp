@@ -23,14 +23,14 @@ namespace WebUser.DAL.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("varchar(255)");
 
+                    b.Property<string>("BirthDate")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("brithDate")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("email")
                         .HasColumnType("longtext");
 
                     b.HasKey("UserName");

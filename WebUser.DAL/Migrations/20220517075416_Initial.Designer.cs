@@ -10,8 +10,8 @@ using WebUser.DAL;
 namespace WebUser.DAL.Migrations
 {
     [DbContext(typeof(IESContext))]
-    [Migration("20220516160246_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220517075416_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,14 +25,14 @@ namespace WebUser.DAL.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("varchar(255)");
 
+                    b.Property<string>("BirthDate")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("brithDate")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("email")
                         .HasColumnType("longtext");
 
                     b.HasKey("UserName");

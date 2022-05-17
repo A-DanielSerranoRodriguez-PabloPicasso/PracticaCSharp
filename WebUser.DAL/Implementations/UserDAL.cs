@@ -10,16 +10,16 @@ namespace WebUser.DAL.Implementations
 {
     public class UserDAL : IUserDAL
     {
-        public IESContext context { get; set; }
+        public IESContext Context { get; set; }
 
         public UserDAL(IESContext context)
         {
-            this.context = context;
+            this.Context = context;
         }
 
         public User? GetUser(User user)
         {
-            return context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+            return Context.Users.FirstOrDefault(u => u.UserName == user.UserName);
         }
        
         public bool Login(User user)
@@ -39,10 +39,10 @@ namespace WebUser.DAL.Implementations
             if (foundUser != null)
                 return false;
 
-            context.Users.Add(user);
-            context.SaveChanges();
+            Context.Users.Add(user);
+            Context.SaveChanges();
             return true;
         }
-        public List<User> GetUsers() => context.Users.ToList();
+        public List<User> GetUsers() => Context.Users.ToList();
     }
 }
