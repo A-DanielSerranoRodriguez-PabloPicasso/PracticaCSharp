@@ -11,6 +11,7 @@ namespace WebUser.DAL.Contracts
     {
         public bool Login(User user);
         public bool Register(User user);
+        public bool DeleteUser(string username);
         public List<User> GetUsers();
     }
 }

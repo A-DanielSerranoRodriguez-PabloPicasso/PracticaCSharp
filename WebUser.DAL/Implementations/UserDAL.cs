@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebUser.DAL.Contracts;
+﻿using WebUser.DAL.Contracts;
 using WebUser.DAL.Tables;
 
 namespace WebUser.DAL.Implementations
@@ -43,6 +38,24 @@ namespace WebUser.DAL.Implementations
             Context.SaveChanges();
             return true;
         }
+        public User? GetUser(string username)
+        {
+            return Context.Users.FirstOrDefault(u => u.UserName == username);
+        }
+
         public List<User> GetUsers() => Context.Users.ToList();
+
+        public bool DeleteUser(string username)
+        {
+            User? found = GetUser(username);
+            if (found != null)
+            {
+                Context.Remove(found);
+                Context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

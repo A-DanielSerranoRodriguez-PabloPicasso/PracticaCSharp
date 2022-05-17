@@ -28,10 +28,14 @@ namespace WebUser.BL.Implementations
 
         public bool Register(UserDTO user)
         {
-            return (UserDAL.Register(Mapper.Map<User>(user)));
+            return UserDAL.Register(Mapper.Map<User>(user));
         }
 
         public List<UserDTO> GetUsers() => Mapper.Map<List<UserDTO>>(UserDAL.GetUsers());
 
+        public bool DeleteUser(string username)
+        {
+            return UserDAL.DeleteUser(username);
+        }
     }
 }

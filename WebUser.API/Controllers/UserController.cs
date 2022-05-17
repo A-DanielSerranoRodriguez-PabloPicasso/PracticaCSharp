@@ -33,6 +33,15 @@ namespace WebUser.API.Controllers
                 return BadRequest(false);
         }
 
+        [HttpDelete("remove")]
+        public ActionResult<bool> Delete(string username)
+        {
+            if(UserBL.DeleteUser(username))
+                return Ok(true);
+            else
+                return Ok(false);
+        }
+
         [HttpGet("get_users")]
         public List<UserDTO> GetUsers()
         {
