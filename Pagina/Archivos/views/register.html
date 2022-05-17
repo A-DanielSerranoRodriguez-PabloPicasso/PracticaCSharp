@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Pokedex Web</title>
+    <title>Pokedex Web - Registro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -24,24 +24,31 @@
         <div class="d-flex justify-content-center">
             <div class="col-8">
                 <div class="form-group">
-                    <label for="email">Nombre de usuario o correo electronico:</label>
-                    <input type="email" class="form-control" placeholder="VivaJose420 o superman007@gmail.com"
-                        id="email" required>
+                    <label for="userName">Nombre de usuario:</label>
+                    <input type="text" class="form-control" placeholder="cSharpSucks" id="userName" required>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Contraseña:</label>
-                    <input type="password" class="form-control" placeholder="A strong and complicated password" id="pwd" required>
+                    <input type="password" class="form-control" placeholder="A strong and complicated password" id="pwd"
+                        required>
                 </div>
-                <button type="button" class="btn btn-primary" id="btn-login">Hacer login</button>
-                <button type="button" class="btn btn-danger"><a href="views/register.html"style="color: white;">Registrarse</a></button>
+                <div class="form-group">
+                    <label for="email">Correo electronico:</label>
+                    <input type="email" class="form-control" placeholder="superman007@gmail.com" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate">Fecha de nacimiento:</label>
+                    <input type="date" class="form-control" placeholder="Password" id="birthDate" required>
+                </div>
+                <button type="button" class="btn btn-primary" id="btn-register">Hacer login</button>
                 <div class="alert alert-danger alert-dismissible" style="display:none;" id="error">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>ERROR!</strong> Login incorrecto.
+                    <strong>ERROR!</strong> Registro incorrecto. usuario existe
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/login.js"></script>
+    <script src="../js/register.js"></script>
 </body>
 
 </html>
