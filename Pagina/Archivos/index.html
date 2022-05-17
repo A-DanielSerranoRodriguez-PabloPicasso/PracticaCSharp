@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Pokedex Web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->     
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script></head>
+    <body>
+        <div class="jumbotron"><h1>Login</h1></div>
+            <div class="container-sm">
+                <div class="d-flex justify-content-center">
+                <div class="col-8">
+                    <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" placeholder="superman007@gmail.com" id="email" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" placeholder="Password" id="pwd" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn-login">Hacer login</button>
+                    <div class="alert alert-danger alert-dismissible" style="display:none;" id="error">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>ERROR!</strong> Login incorrecto.
+                      </div>
+                </div>
+            </div>
+            </div>
+        <script src="../js/login.js"></script>
+    </body>
+</html>
