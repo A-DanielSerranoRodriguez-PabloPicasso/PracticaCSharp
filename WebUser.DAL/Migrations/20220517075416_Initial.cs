@@ -21,8 +21,7 @@ namespace WebUser.DAL.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    BirthDate = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    BirthDate = table.Column<string>(type: "date", nullable: true)
                 },
                 constraints: table =>
                 {
