@@ -13,5 +13,7 @@ namespace WebUser.BL.Contracts
         public bool Register(UserDTO user);
         public bool DeleteUser(string username);
         public List<UserDTO> GetUsers();
+        public UserDTO GetUser(string username);
+        public bool UpdateUser(string username, UserDTO user);
     }
 }

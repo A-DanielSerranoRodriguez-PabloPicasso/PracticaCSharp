@@ -13,5 +13,7 @@ namespace WebUser.DAL.Contracts
         public bool Register(User user);
         public bool DeleteUser(string username);
         public List<User> GetUsers();
+        public User? GetUser(string username);
+        public bool UpdateUser(string username, User user);
     }
 }

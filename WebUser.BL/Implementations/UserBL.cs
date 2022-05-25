@@ -37,5 +37,15 @@ namespace WebUser.BL.Implementations
         {
             return UserDAL.DeleteUser(username);
         }
+
+        public UserDTO GetUser(string username)
+        {
+            return Mapper.Map<UserDTO>(UserDAL.GetUser(username));
+        }
+
+        public bool UpdateUser(string username, UserDTO user)
+        {
+            return UserDAL.UpdateUser(username, Mapper.Map<User>(user));
+        }
     }
 }

@@ -47,5 +47,17 @@ namespace WebUser.API.Controllers
         {
             return UserBL.GetUsers();
         }
+
+        [HttpGet("get_user")]
+        public UserDTO GetUser(string username)
+        {
+            return UserBL.GetUser(username);
+        }
+
+        [HttpPost("update_user")]
+        public bool UpdateUser(string username, UserDTO user)
+        {
+            return UserBL.UpdateUser(username, user);
+        }
     }
 }

@@ -1,48 +1,82 @@
 <html>
-    <head>
-        <title>Pokedex Web</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Latest compiled and minified CSS -->     
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <title>Pokedex Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script></head>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-        <script src="../js/welcome.js"></script>
-    <body>
-        <div class="jumbotron"><h1>Bienvenido</h1></div>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<script src="../js/welcome.js"></script>
+
+<body>
+    <div class="jumbotron">
+        <h1>Bienvenido</h1>
+    </div>
+    <div id="primero" style="display: none;">
+        <div class="form-group">
+            <label for="insertName">Nombre de usuario:</label>
+            <input type="text" class="form-control" placeholder="cSharpSucks" id="insertName" required>
+        </div>
+        <div class="form-group">
+            <label for="insertPwd">Contraseña:</label>
+            <input type="password" class="form-control" placeholder="A strong and complicated password" id="insertPwd"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="insertEmail">Correo electronico:</label>
+            <input type="email" class="form-control" placeholder="superman007@gmail.com" id="insertEmail" required>
+        </div>
+        <div class="form-group">
+            <label for="insertBdate">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" id="insertBdate" required>
+        </div>
+        <button type="button" class="btn btn-primary" id="btn-register" onclick="insertUser()">Insertar</button>
+        <button class="btn btn-warning" id="cancel-insert" onclick="cancelInsert()"> Cancelar </button>
+    </div>
+    <div id="segundo">
         <div class="container-sm">
             <div class="d-flex justify-content-center">
                 <div class="col-8">
-                    <div class="form-group">
-                        <label for="email">Nombre de usuario o correo electronico:</label>
-                        <input type="email" class="form-control" placeholder="VivaJose420 o superman007@gmail.com"
-                            id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Contraseña:</label>
-                        <input type="password" class="form-control" placeholder="A strong and complicated password" id="pwd" required>
-                    </div>
-                    <button type="button" class="btn btn-primary" id="btn-login">Hacer login</button>
-                    <button type="button" class="btn btn-danger"><a href="views/register.html"style="color: white;">Registrarse</a></button>
-                    <div class="alert alert-danger alert-dismissible" style="display:none;" id="error">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>ERROR!</strong> Login incorrecto.
-                    </div>
+                    <button id="insBtn" class="btn btn-success" onclick="toggleInsert()">Insertar usuario</button>
+                    <input type="text" name="suInput" id="suInput" placeholder="Buscar usuario">
+                    <button id="suButton" class="btn btn-primary" onclick="searchUser()">Buscar usuario</button>
                 </div>
             </div>
         </div>
-        <div>
+        <div id="users-div">
             <h5>Usuarios</h5>
             <ul id="users">
-
             </ul>
         </div>
-    </body>
+        <div id="modify-user" style="display: none;">
+            <div class="form-group">
+                <label for="pwd">Contraseña:</label>
+                <input type="password" class="form-control" placeholder="A strong and complicated password" id="pwd"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electronico:</label>
+                <input type="email" class="form-control" placeholder="superman007@gmail.com" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Fecha de nacimiento:</label>
+                <input type="date" class="form-control" placeholder="Password" id="birthDate" required>
+            </div>
+            <button type="button" class="btn btn-primary" id="btn-create" onclick="updateUser()">Actualizar
+                usuario</button>
+            <button class="btn btn-dark" id="cancel-modify" onclick="cancelModify()">Cancelar</button>
+        </div>
+    </div>
+</body>
+
 </html>

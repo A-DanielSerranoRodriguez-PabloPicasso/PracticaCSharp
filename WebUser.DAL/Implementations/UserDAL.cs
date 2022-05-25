@@ -54,8 +54,25 @@ namespace WebUser.DAL.Implementations
                 Context.SaveChanges();
                 return true;
             }
-            else
-                return false;
+            return false;
+        }
+
+        public bool UpdateUser(string username, User user)
+        {
+            User? found = GetUser(username);
+            if(found != null)
+            {
+                if (user.UserName.Length > 0)
+                    found.Password = user.Password;
+                if (user.UserName.Length > 0)
+                    found.Email = user.Email;
+                if (user.UserName.Length > 0)
+                    found.BirthDate = user.BirthDate;
+                Context.Users.Update(found);
+                Context.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }
